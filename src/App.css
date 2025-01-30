@@ -1,0 +1,371 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Padding to Avoid Content Being Hidden Under Fixed Navbar */
+body {
+  padding-top: 80px; /* Adjust according to the height of your navbar */
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navbar Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-link {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.navbar-link:hover {
+  color: #e0e7ff;
+}
+
+/* Underline Animation */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: white;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Box Shadow on Scroll */
+@media (min-width: 769px) {
+  .navbar.scrolled {
+    background: #1e3a8a;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Register Form Styling */
+.register-container {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 100px 0;
+}
+
+.register-form {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: white;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styling */
+.register-form h2 {
+  font-size: 2rem;
+  color: #6c5ce7;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #6c5ce7;
+  outline: none;
+  box-shadow: 0 0 5px rgba(108, 92, 247, 0.4);
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #6c5ce7;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #5a48c0;
+  transform: scale(1.05);
+}
+
+/* Link to Login */
+.text-sm {
+  color: #6c5ce7;
+  text-align: center;
+}
+
+.text-sm a {
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+.text-sm a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .register-form {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Home Page */
+.page-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #6c5ce7;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+input, textarea, select, button {
+  font-size: 1.1rem;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+input, textarea {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #ddd;
+}
+
+input:focus, textarea:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 10px rgba(108, 92, 247, 0.5);
+}
+
+select {
+  background-color: #fff;
+  border: 2px solid #ddd;
+}
+
+button {
+  background-color: #6c5ce7;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5a48c0;
+  transform: scale(1.05);
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+li h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+li p {
+  font-size: 1.1rem;
+  color: #636e72;
+}
+
+
+
+/* footer css */
+
+/* Social Icon Styling */
+.social-icon {
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+  color: #ffffff; /* Initial icon color */
+}
+
+.social-icon:hover {
+  transform: scale(1.15); /* Slightly increase size for a more interactive effect */
+  color: #38bdf8; /* Light blue color on hover */
+}
+
+/* Footer Background */
+footer {
+  background-color: #1f2937; /* Darker background for better contrast */
+  padding-top: 50px; /* Increased padding for visual spacing */
+  padding-bottom: 30px; /* Added some space at the bottom */
+}
+
+/* Text Styling for Footer */
+footer .text-sm {
+  color: #d1d5db; /* Light gray text for better readability */
+}
+
+/* Hover effect for links in the footer */
+footer a:hover {
+  text-decoration: underline; /* Underline links when hovered */
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+  footer {
+      padding-top: 40px; /* Adjust padding for smaller screens */
+  }
+
+  .social-icon {
+      margin: 0 12px; /* More spacing for social icons on mobile */
+  }
+}
