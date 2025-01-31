@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../App.css"
+import '/Forms.css'; // Import the regular CSS file
 
-const Login = () => {
+const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/login', {
+        const response = await fetch('https://lastback-6.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -18,8 +18,8 @@ const Login = () => {
         });
 
         if (response.ok) {
-            // alert('Login successful! Redirecting to home...');
-            navigate('/home');
+            onLogin();
+            navigate('/home', { replace: true });
         } else {
             const errorData = await response.json();
             alert(errorData.message);
@@ -27,34 +27,27 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-md bg-white">
-                <h2 className="text-center text-2xl font-bold text-purple-600">Welcome Back</h2>
-                <form onSubmit={handleLogin} className="space-y-5">
-                    <div>
-                        <input 
-                            type="email" 
-                            placeholder="Email" 
-                            value={email} 
-                            onChange={(e) => setEmail(e.target.value)} 
-                            required 
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-purple-500" 
-                        />
-                    </div>
-                    <div>
-                        <input 
-                            type="password" 
-                            placeholder="Password" 
-                            value={password} 
-                            onChange={(e) => setPassword(e.target.value)} 
-                            required 
-                            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-purple-500" 
-                        />
-                    </div>
-                    <button type="submit" className="w-full p-3 text-white bg-purple-600 rounded-md hover:bg-purple-700 transition duration-200">Login</button>
-                </form>
-                <p className="text-sm text-center">Don't have an account? <a href="/register" className="text-purple-600 hover:underline">Register here</a></p>
-            </div>
+        <div className="form-container">
+            <h2 className="form-title">Login</h2>
+            <form onSubmit={handleLogin} className="form">
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    required 
+                    className="form-input"
+                />
+                <input 
+                    type="password" 
+                    placeholder="Password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required 
+                    className="form-input"
+                />
+                <button type="submit" className="form-button">Login</button>
+            </form>
         </div>
     );
 };
