@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "/Forms.css"
+import { toast } from 'react-toastify'; // Importing toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import the Toastify CSS
+import "/Forms.css";
 
 const Register = ({ onRegister }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [registrationStatus, setRegistrationStatus] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = async (e) => {
@@ -19,11 +22,15 @@ const Register = ({ onRegister }) => {
         });
 
         if (response.ok) {
+            setRegistrationStatus('User Registered');
             onRegister();
-            navigate('/login', { replace: true });
+            toast.success('Registration successful! Redirecting to login...'); // Toastify success message
+            setTimeout(() => {
+                navigate('/login', { replace: true });
+            }, 6000); // Redirect after 6 seconds
         } else {
             const errorData = await response.json();
-            alert(errorData.message);
+            toast.error(`Error: ${errorData.message}`); // Toastify error message
         }
     };
 
@@ -57,6 +64,11 @@ const Register = ({ onRegister }) => {
                 />
                 <button type="submit" className="submit-btn">Register</button>
             </form>
+
+            {/* Display registration success message */}
+            {registrationStatus && (
+                <p className="registration-status">{registrationStatus}</p>
+            )}
         </div>
     );
 };

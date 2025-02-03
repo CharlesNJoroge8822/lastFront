@@ -28,6 +28,7 @@ function Navbar() {
           <Link to="/login" className="navbar-link">Login</Link>
           <Link to="/logout" className="navbar-link">Logout</Link>
           <Link to="/register" className="navbar-link">Register</Link>
+
         </div>
 
         {/* Dark Mode Toggle */}
