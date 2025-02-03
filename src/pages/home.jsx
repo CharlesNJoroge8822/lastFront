@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import "/Home.css";  // Link to your regular CSS
+import "/Home.css";  
 
 const Home = () => {
     const [projects, setProjects] = useState([]);
