@@ -1,3 +1,7 @@
+Loom presentation - https://www.loom.com/share/1932480827ac43baa1c854683b5f9fc2?sid=3a02cdcf-98c5-41af-b2cc-1bc795d2ee30
+Backend Deployment Link - https://lastback-7.onrender.com
+
+
 Project Management Tool - README
 Overview
 The Project Management Tool is designed to help teams manage projects, tasks, and communication in an organized manner. It allows users to register, log in, create projects, assign tasks, track progress, and communicate within the team, all in one platform.
