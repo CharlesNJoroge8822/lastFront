@@ -102,4 +102,310 @@
       transform: scale(1);
     }
   }
-  
+
+
+
+/* Logged In ... */
+/* Container styling */
+.logged-in-container {
+  background: linear-gradient(135deg, #f0f4f8 25%, #e2e8f0 100%);
+  min-height: 100vh;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+}
+
+/* Welcome card (the main content box) */
+.welcome-card {
+  background-color: #f9fafb;
+  border-radius: 15px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  max-width: 800px;
+  margin: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: radial-gradient(circle, rgba(255,255,255,0.6), rgba(245,245,245,0.9));
+}
+
+.welcome-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading for the page */
+h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #2d3748;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #4a5568;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+/* List styling */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+ul li .checkmark {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  padding: 6px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+ul li:hover .checkmark {
+  transform: rotate(360deg);
+}
+
+/* Color styling for the checkmarks */
+ul li .text-blue-600 {
+  color: #3b82f6;
+}
+
+ul li .text-green-600 {
+  color: #10b981;
+}
+
+ul li .text-red-600 {
+  color: #ef4444;
+}
+
+/* Button styling */
+button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(72, 85, 99, 0.3);
+}
+
+/* Responsive typography for smaller screens */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  ul li {
+    font-size: 1.1rem;
+  }
+
+  .welcome-card {
+    padding: 30px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  ul li {
+    font-size: 1rem;
+  }
+
+  .welcome-card {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .logged-in-container {
+    padding: 0 10px;
+  }
+}
+
+/* Gradient button with shadow */
+.btn-gradient {
+  background: linear-gradient(90deg, #4F46E5, #9333EA);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #9333EA, #4F46E5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom progress bar for achievements */
+.progress-bar {
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  height: 10px;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  border-radius: 8px;
+  background-color: #38b2ac;
+  transition: width 0.4s ease;
+}
+
+.progress-bar-container {
+  margin-top: 30px;
+}
+
+.progress-bar-container h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 15px;
+}
+
+/* Achievement icon */
+.achievement-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #38b2ac;
+}
+
+/* Skill section styling */
+.skills-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.skills-section .skill-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-section .skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card h4 {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  color: #718096;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer section */
+footer {
+  background-color: #2d3748;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+footer a {
+  color: #38b2ac;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #4FD1C5;
+}
+
+/* Call-to-action section */
+.call-to-action {
+  background-color: #edf2f7;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+.call-to-action .btn-call-to-action {
+  background-color: #38b2ac;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 12px 25px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.call-to-action .btn-call-to-action:hover {
+  background-color: #319795;
+  transform: translateY(-2px);
+}
